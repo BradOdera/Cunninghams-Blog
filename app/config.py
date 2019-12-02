@@ -2,6 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
+    QUOTES_API_ENDPOINT = 'http://quotes.stormconsultancy.co.uk/random.json'
     pass
 
 
