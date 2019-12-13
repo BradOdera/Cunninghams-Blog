@@ -1,7 +1,11 @@
-from app import app
-import urllib.request
+from . import create_app
+import request
 import json
-# from .models import 
+from .models import Quotes
 
-# Getting api key
-# api_key = app.config['QUOTES_API_KEY']
+
+def get_quotes():
+    response = requests.get('http://quotes.stormconsultancy.co.uk/random.json')
+    if response.status_code == 200:
+        quote = response.json()
+        return quote
