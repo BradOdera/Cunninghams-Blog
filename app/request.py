@@ -1,5 +1,5 @@
 from . import create_app
-import request
+import requests
 import json
 from .models import Quotes
 
