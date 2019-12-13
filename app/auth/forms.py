@@ -10,7 +10,7 @@ class RegistrationForm(FlaskForm):
     email = StringField('Your Email Address', validators=[Required(), Email()])
     username = StringField('Enter your username', validators=[Required()])
     full_name = StringField('Enter your full name', validators=[Required()])
-    password = PasswordFsield('Password', validators=[Required(), EqualTo(
+    password = PasswordField('Password', validators=[Required(), EqualTo(
         'password_confirm', message='Passwords must match')])
     password_confirm = PasswordField(
         'Confirm Passwords', validators=[Required()])
