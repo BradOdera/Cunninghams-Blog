@@ -5,7 +5,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://aphya5:NewPasword@localhost/blog_post'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:NewPasword@localhost/blog_post'
 
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -21,7 +21,7 @@ class Config:
 class TestConfig(object):
     """docstring for TestConfig."""
 
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://aphya5:NewPasword@localhost/blog_post_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:NewPasword@localhost/blog_post_test'
 
 
 class ProdConfig(Config):
@@ -29,7 +29,7 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://aphya5:NewPasword@localhost/blog_post'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:NewPasword@localhost/blog_post'
 
     DEBUG = True
 
