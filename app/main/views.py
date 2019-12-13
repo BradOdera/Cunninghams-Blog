@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for, abort, flash
 from flask_login import login_required, current_user
 import datetime
 
-from app import main
+from . import main
 from .. import db
 from ..email import mail_message
 from ..request import get_quotes
@@ -12,10 +12,10 @@ from .forms import BlogForm, CommentForm
 # Views
 @main.route('/')
 def index():
-    quotes = get_quotes()
-    blogs = Blogs.get_blogs()
+    # quotes = get_quotes()
+    blogs = Blogs.query.all()
     title = 'Cunninghams Blog'
-    return render_template('index.html', title=title, blogs=blogs, quotes=quotes)
+    return render_template('index.html', title=title, blogs=blogs)
 
 
 @main.route('/pitch/new', methods=['GET', 'POST'])
