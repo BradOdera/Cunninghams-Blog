@@ -20,7 +20,7 @@ def login():
 
         flash('Invalid username or Password')
 
-    title = "Blog Post"
+    title = "Cunninghams Blog"
     return render_template('auth/login.html', login_form=login_form, title=title)
 
 
@@ -39,7 +39,6 @@ def register():
                      "email/welcome", user.email, user=user)
 
         return redirect(url_for('auth.login'))
-        title = "New Account"
     return render_template('auth/register.html', registration_form=form)
 
 

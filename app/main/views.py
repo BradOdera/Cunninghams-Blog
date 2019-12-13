@@ -5,7 +5,7 @@ import datetime
 from app import main
 from .. import db
 from ..email import mail_message
-from ..requests import get_quotes
+from ..request import get_quotes
 from ..models import User, Blogs, Comments, Subscriber
 from .forms import BlogForm, CommentForm
 

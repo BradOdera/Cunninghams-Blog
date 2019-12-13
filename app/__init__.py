@@ -12,6 +12,7 @@ login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 mail = Mail()
 
+
 def create_app(config_name):
 
     app = Flask(__name__)
@@ -26,14 +27,11 @@ def create_app(config_name):
     mail.init_app(app)
     login_manager.init_app(app)
 
-
-
-
     # Registering the blueprint
-    # from app import main as main_blueprint
-    # app.register_blueprint(main_blueprint)
+    from app.main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
-    # from app import auth as auth_blueprint
-    # app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint, url_prefix='/authenticate')
 
     return app
