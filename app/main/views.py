@@ -14,7 +14,7 @@ from .forms import BlogForm, CommentForm
 def index():
     quotes = get_quotes()
     blogs = Blogs.get_blogs()
-    title = 'Blog Post App'
+    title = 'Cunninghams Blog'
     return render_template('index.html', title=title, blogs=blogs, quotes=quotes)
 
 
