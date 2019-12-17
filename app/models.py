@@ -57,7 +57,7 @@ class Blogs(db.Model):
     published = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-    comment = db.relationship('Comments', backref='blogs', lazy="dynamic")
+    comment = db.relationship('Comments', backref='blog', lazy="dynamic")
 
     def save_blogs(self):
         db.session.add(self)
